@@ -19,11 +19,17 @@ public class LogInCheckInterceptor extends HandlerInterceptorAdapter {
 
 		String requestUri = request.getRequestURI();
 		
+		/**
+		 * 로그인 체크가 필요없는 uri 는 바로 패스 시킨다
+		 */
 		if (StringUtils.containsAny(requestUri, EXCLUDE_URI)) {
 			return true;
 		}
 		
-		if (!isAuthenticated || !StringUtils.containsAny(requestUri, EXCLUDE_URI)) {
+		/**
+		 * 세션 생성 여부를 확인해서 세션이 없는 경우는 초기화면으로 이동
+		 */
+		if (!isAuthenticated) {
 			Log.debug("Not LogIn");
 			response.sendRedirect(request.getContextPath() + "/");
 			return false;
