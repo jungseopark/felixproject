@@ -4,12 +4,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 public class LogInCheckInterceptor extends HandlerInterceptorAdapter {
 
-	private Logger Log = Logger.getLogger(this.getClass());
+	private Logger Log = LoggerFactory.getLogger(this.getClass());
 
 	private static final String[] EXCLUDE_URI = { "/common/logInPageView.do", "/common/actionLogIn.do" };
 

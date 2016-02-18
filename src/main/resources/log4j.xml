@@ -42,6 +42,11 @@
 		<level value="TRACE" />
 		<appender-ref ref="console" />
 	</logger>
+	
+	<logger name="jdbc.resultsettable" additivity="false">
+		<level value="TRACE" />
+		<appender-ref ref="console" />
+	</logger>
 
 	<root>
 		<level value="TRACE" />
