@@ -1,0 +1,67 @@
+@CHARSET "UTF-8";
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+body {
+	background-color: #d8d8d8;
+	font-family: "Trebuchet MS", "돋움", Dotum, Arial;
+	min-width: 1000px;
+	min-height: 100%;
+	margin: 0px auto;
+}
+
+header {
+	width: 1000px;
+	height: 40px;
+	background-color: white;
+	display: table;
+	margin: 0px auto;
+}
+
+nav {
+	height: 50px;
+	width: 1000px;
+	background-color: #007294;
+	margin: 0px auto;
+}
+
+section {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	min-height: 100%;
+	display: table;
+}
+
+aside {
+	background-color: #272d39;
+	width: 150px;
+	display: table-cell;
+}
+
+article {
+	background-color: white;
+	width: 850px;
+	display: table-cell;
+}
+
+footer {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #888;
+	height: 50px;
+	text-align: center;
+}
+

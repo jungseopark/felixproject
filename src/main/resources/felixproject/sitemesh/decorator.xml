@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators>
+
+	<decorator name="mainLayout" page="/WEB-INF/jsp/layout/mainLayout.jsp">
+		<pattern>/*</pattern>
+	</decorator>
+	
+	<decorator name="doctypeInc" page="/WEB-INF/jsp/include/doctypeInc.jsp"/>
+	<decorator name="commonInc" page="/WEB-INF/jsp/include/commonInc.jsp"/>
+	<decorator name="headerInc" page="/WEB-INF/jsp/include/headerInc.jsp"/>
+	<decorator name="topMenuInc" page="/WEB-INF/jsp/include/topMenuInc.jsp"/>
+	<decorator name="leftMenuInc" page="/WEB-INF/jsp/include/leftMenuInc.jsp"/>
+	<decorator name="footerInc" page="/WEB-INF/jsp/include/footerInc.jsp"/>
+	
+	<excludes>
+		<pattern>/common/forwardLoginPage.do</pattern>
+	</excludes>
+		
+</decorators>
