@@ -11,17 +11,15 @@ public class LogInCheckInterceptor extends HandlerInterceptorAdapter {
 
 	private Logger Log = Logger.getLogger(this.getClass());
 
+	private static final String[] EXCLUDE_URI = { "/common/logInPageView.do", "/common/actionLogIn.do" };
+
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
 		Boolean isAuthenticated = FelixUserDetailsHelper.isAuthenticated();
-		
+
 		String requestUri = request.getRequestURI();
-		
-		if(StringUtils.contains(requestUri, "/common/logInPageView.do")) {
-			return true;
-		}
-		
-		if (!isAuthenticated) {
+
+		if (!isAuthenticated || !StringUtils.containsAny(requestUri, EXCLUDE_URI)) {
 			Log.debug("Not LogIn");
 			response.sendRedirect(request.getContextPath() + "/");
 			return false;
