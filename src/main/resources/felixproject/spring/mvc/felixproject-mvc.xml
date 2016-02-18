@@ -11,7 +11,15 @@
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Repository" />
 	</context:component-scan>
 
-	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
+	<bean id="logInCheckInterceptor" class="kr.pe.felixproject.core.LogInCheckInterceptor"/>
+
+	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
+		<property name="interceptors">
+			<list>
+				<ref bean="logInCheckInterceptor"/>
+			</list>
+		</property>
+	</bean>
 
 	<bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 		<property name="order" value="1" />
