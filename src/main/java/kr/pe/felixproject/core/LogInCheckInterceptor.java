@@ -18,7 +18,11 @@ public class LogInCheckInterceptor extends HandlerInterceptorAdapter {
 		Boolean isAuthenticated = FelixUserDetailsHelper.isAuthenticated();
 
 		String requestUri = request.getRequestURI();
-
+		
+		if (StringUtils.containsAny(requestUri, EXCLUDE_URI)) {
+			return true;
+		}
+		
 		if (!isAuthenticated || !StringUtils.containsAny(requestUri, EXCLUDE_URI)) {
 			Log.debug("Not LogIn");
 			response.sendRedirect(request.getContextPath() + "/");
