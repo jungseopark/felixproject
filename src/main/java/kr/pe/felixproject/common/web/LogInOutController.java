@@ -6,7 +6,6 @@ import javax.servlet.http.HttpServletRequest;
 import kr.pe.felixproject.common.service.LogInOutService;
 import kr.pe.felixproject.common.service.LogInOutVO;
 import kr.pe.felixproject.core.FelixMessageSource;
-import kr.pe.felixproject.core.FelixUserDetailsHelper;
 import kr.pe.felixproject.core.service.ClientInformation;
 import kr.pe.felixproject.core.service.SessionVO;
 
@@ -25,7 +24,7 @@ public class LogInOutController {
 	@Resource(name = "felixMessageSource")
 	FelixMessageSource felixMessageSource;
 
-	@RequestMapping(value = "/common/forwardLoginPage.do")
+	@RequestMapping(value = "/common/logInPageView.do")
 	public String logInUserView(@ModelAttribute("loginVO") LogInOutVO logInVO) throws Exception {
 		return "login";
 	}
@@ -50,11 +49,6 @@ public class LogInOutController {
 
 	@RequestMapping(value = "/common/staffMainView.do")
 	public String staffMainView(ModelMap model) throws Exception {
-		Boolean isAuthenticated = FelixUserDetailsHelper.isAuthenticated();
-		if (!isAuthenticated) {
-			model.addAttribute("message", felixMessageSource.getMessage("fail.common.login"));
-			return "login";
-		}
 		return "staff_main";
 	}
 }
