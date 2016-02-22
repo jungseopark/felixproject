@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
-<sqlMap namespace="LogInOut">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-	<typeAlias  alias="logInVO" type="kr.pe.felixproject.common.service.LogInOutVO"/>
-	
-	<resultMap id="logInUser" class="kr.pe.felixproject.common.service.LogInOutVO">
+<mapper namespace="kr.pe.felixproject.common.service.impl.LogInOutMapper">
+
+	<resultMap id="logInUser" type="kr.pe.felixproject.common.service.LogInOutVO">
 		<result property="userId" column="USER_ID" />
 		<result property="userName" column="USER_NAME" />
 	</resultMap>
 
-	<select id="LogInOutDAO.encryptPassword" parameterClass="String" resultClass="String">
-		<![CDATA[ SELECT SHA1(#password#) ]]>
+	<select id="encryptPassword" parameterType="String" resultType="String">
+		<![CDATA[ SELECT SHA1(#{password}) ]]>
 	</select>
 	
-	<select id="LogInOutDAO.actionLogIn" parameterClass="logInVO" resultMap="logInUser">
+	<select id="actionLogIn" parameterType="logInOutVO" resultMap="logInUser">
 		<![CDATA[ 
 			SELECT  a.USER_ID,
 			        a.USER_NAME
 			  FROM  TN_LOGINUSER a
-			 WHERE  a.USER_ID = #searchUserId#
-			   AND  a.USER_PASSWORD = #searchUserPassword#
+			 WHERE  a.USER_ID = #{searchUserId}
+			   AND  a.USER_PASSWORD = #{searchUserPassword}
 		]]>
 	</select>
 
-</sqlMap>
+</mapper>

@@ -2,17 +2,16 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-	
-	<bean id="lobHandler" class="org.springframework.jdbc.support.lob.DefaultLobHandler" lazy-init="true" />
 
-    <bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
-        <property name="configLocations">
-            <list>
-                <value>classpath:/felixproject/sqlmap/config/*.xml</value>
-            </list>
-        </property>
-        <property name="dataSource" ref="dataSource-${Globals.DbType}"/>
-        <property name="lobHandler" ref="lobHandler"/>
-    </bean>
-    
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource-${Globals.DbType}" />
+		<property name="configLocation"
+			value="classpath:/felixproject/sqlmap/config/sqlmap-config.xml" />
+		<property name="mapperLocations" value="classpath:/felixproject/sqlmap/sql/**/*.xml" />
+	</bean>
+
+	<bean class="egovframework.rte.psl.dataaccess.mapper.MapperConfigurer">
+		<property name="basePackage" value="kr.pe.felixproject" />
+	</bean>
+
 </beans>

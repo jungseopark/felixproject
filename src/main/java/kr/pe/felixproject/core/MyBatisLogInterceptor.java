@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
 
 @Intercepts({ @Signature(type = StatementHandler.class, method = "query", args = { Statement.class, ResultHandler.class }),
 		@Signature(type = StatementHandler.class, method = "update", args = { Statement.class }) })
-public class IBatisLogInterceptor implements Interceptor {
+public class MyBatisLogInterceptor implements Interceptor {
 	
 	private Logger Log = LoggerFactory.getLogger(this.getClass());
 

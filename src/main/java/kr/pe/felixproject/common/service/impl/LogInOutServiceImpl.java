@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 public class LogInOutServiceImpl extends FelixAbstractServiceImpl implements LogInOutService {
 
 	@Resource(name = "LogInOutDAO")
-	LogInOutDAO logInOutDAO;
+	LogInOutMapper logInOutDAO;
 
 	public LogInOutVO actionLogIn(LogInOutVO vo) throws Exception {
 		String encryptPassword = logInOutDAO.encryptPassword(vo.getSearchUserPassword());
