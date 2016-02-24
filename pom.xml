@@ -7,12 +7,11 @@
 	<packaging>war</packaging>
 	<name>Name Name</name>
 	<description>Description Description</description>
-	
+
 	<properties>
-		<egovframework.version>2.6.0</egovframework.version>
-		<springframework.version>3.0.5.RELEASE</springframework.version>
+		<egovframework.version>3.1.0</egovframework.version>
 	</properties>
-	
+
 	<repositories>
 		<repository>
 			<id>egovframe</id>
@@ -37,11 +36,11 @@
 			<artifactId>sitemesh</artifactId>
 			<version>2.4.2</version>
 		</dependency>
-		 <dependency>
-            <groupId>commons-dbcp</groupId>
-            <artifactId>commons-dbcp</artifactId>
-            <version>1.3</version>
-        </dependency>
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>1.3</version>
+		</dependency>
 		<dependency>
 			<groupId>egovframework.rte</groupId>
 			<artifactId>egovframework.rte.fdl.cmmn</artifactId>
@@ -103,14 +102,9 @@
 			<version>3.4</version>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-api</artifactId>
-			<version>2.3</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-core</artifactId>
-			<version>2.3</version>
+			<groupId>net.sf</groupId>
+			<artifactId>log4jdbc3</artifactId>
+			<version>1.1</version>
 		</dependency>
 	</dependencies>
 
@@ -119,7 +113,8 @@
 			<plugin>
 				<groupId>org.mortbay.jetty</groupId>
 				<artifactId>jetty-maven-plugin</artifactId>
-				<version>7.2.2.v20101205</version>
+				<!-- <version>7.2.2.v20101205</version>-->
+				<version>8.0.0.M3</version>
 				<configuration>
 					<scanIntervalSeconds>30</scanIntervalSeconds>
 					<reload>automatic</reload>
