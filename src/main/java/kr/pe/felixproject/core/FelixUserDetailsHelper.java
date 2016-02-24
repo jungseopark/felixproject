@@ -24,7 +24,6 @@ public class FelixUserDetailsHelper {
 		if (RequestContextHolder.getRequestAttributes() == null) {
 			return false;
 		} else {
-
 			if (RequestContextHolder.getRequestAttributes().getAttribute("SessionVO", RequestAttributes.SCOPE_SESSION) == null) {
 				return false;
 			} else {

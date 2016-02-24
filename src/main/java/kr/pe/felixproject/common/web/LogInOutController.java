@@ -9,6 +9,8 @@ import kr.pe.felixproject.core.FelixMessageSource;
 import kr.pe.felixproject.core.service.ClientInformation;
 import kr.pe.felixproject.core.service.SessionVO;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -17,6 +19,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class LogInOutController {
+	
+	private Logger Log = LoggerFactory.getLogger(this.getClass());
 
 	@Resource(name = "LogInOutService")
 	LogInOutService logInOutService;
