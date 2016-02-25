@@ -14,9 +14,12 @@
 	</context:component-scan>
 
 	<bean id="logInCheckInterceptor" class="kr.pe.felixproject.core.LogInCheckInterceptor"/>
+	
+	<bean id="webLogInterceptor" class="kr.pe.felixproject.core.WebLogInterceptor"/>
 
 	<mvc:interceptors>
 		<ref bean="logInCheckInterceptor"/>
+		<ref bean="webLogInterceptor"/>
 	</mvc:interceptors>
 
 	<bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">

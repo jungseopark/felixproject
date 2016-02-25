@@ -9,7 +9,7 @@
 	
 	<Appenders>
 		<Console name="consoleAppender" target="SYSTEM_OUT">
-			<PatternLayout pattern="%d{COMPACT} [%5p] [%X{userId}] [%c] %m%n" />
+			<PatternLayout pattern="%d{COMPACT} [-%5p] [%X{staffNo}] [%c] %m%n" />
 		</Console>
 		
 		<JDBC name="databaseAppender" tableName="TN_SQLLOG">
