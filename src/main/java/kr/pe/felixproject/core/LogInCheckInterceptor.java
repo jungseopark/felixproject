@@ -10,7 +10,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 public class LogInCheckInterceptor extends HandlerInterceptorAdapter {
 
-	private Logger Log = LoggerFactory.getLogger(this.getClass());
+	private Logger Logger = LoggerFactory.getLogger(this.getClass());
 
 	private static final String[] EXCLUDE_URI = { "/common/logInPageView.do", "/common/actionLogIn.do" };
 
@@ -31,7 +31,7 @@ public class LogInCheckInterceptor extends HandlerInterceptorAdapter {
 		 * 세션 생성 여부를 확인해서 세션이 없는 경우는 초기화면으로 이동
 		 */
 		if (!isAuthenticated) {
-			Log.debug("Not LogIn");
+			Logger.debug("Not LogIn");
 			response.sendRedirect(request.getContextPath() + "/");
 			return false;
 		}
