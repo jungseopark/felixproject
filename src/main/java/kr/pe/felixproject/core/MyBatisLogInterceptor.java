@@ -18,6 +18,10 @@ import org.apache.log4j.MDC;
 		@Signature(type = StatementHandler.class, method = "update", args = { Statement.class }) })
 public class MyBatisLogInterceptor implements Interceptor {
 
+	/**
+	 * sql log를 db로 저장할때, log4j2.xml에서 필요한 정보를 생성하는 메소드.
+	 * myBatis 실행전에 인터셉터 해서 정보를 생성한 후, MDC를 이용하여 log4j2.xml로 전달한다.
+	 */
 	public Object intercept(Invocation invocation) throws Throwable {
 		if (FelixUserDetailsHelper.isAuthenticated()) {
 			SessionVO sessionVO = (SessionVO) FelixUserDetailsHelper.getAuthenticatedUser();
