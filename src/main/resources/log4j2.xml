@@ -5,11 +5,9 @@
     	<Property name="databaseFilter">\sorg.apache.commons.dbcp.DelegatingPreparedStatement.execute\(DelegatingPreparedStatement.java:172\)\r\n2.\s</Property>
   	</Properties>
   	
-  	<!--  org.apache.commons.dbcp.DelegatingPreparedStatement.execute\(DelegatingPreparedStatement.java:172\)\r\n2.  -->
-	
 	<Appenders>
 		<Console name="consoleAppender" target="SYSTEM_OUT">
-			<PatternLayout pattern="%d{COMPACT} [-%5p] [%X{staffNo}] [%c] %m%n" />
+			<PatternLayout pattern="[%-5p : %X{staffNo} : %c] %m%n" />
 		</Console>
 		
 		<JDBC name="databaseAppender" tableName="TN_SQLLOG">

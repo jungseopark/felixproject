@@ -6,6 +6,7 @@
 	<typeAliases>
 		<typeAlias alias="logInOutVO" type="kr.pe.felixproject.common.service.LogInOutVO" />
 		<typeAlias alias="webLogVO" type="kr.pe.felixproject.core.service.WebLogVO" />
+		<typeAlias alias="methodLogVO" type="kr.pe.felixproject.core.service.MethodLogVO" />
 	</typeAliases>
 	
 	<plugins>
