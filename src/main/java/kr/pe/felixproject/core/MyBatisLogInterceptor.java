@@ -19,22 +19,14 @@ import org.apache.log4j.MDC;
 public class MyBatisLogInterceptor implements Interceptor {
 
 	public Object intercept(Invocation invocation) throws Throwable {
-		StatementHandler handler = (StatementHandler) invocation.getTarget();
-		String query = handler.getBoundSql().getSql();
-		String param = "";
-
-		if (handler.getParameterHandler().getParameterObject() != null) {
-			param = handler.getParameterHandler().getParameterObject().toString();
-		}
-
 		if (FelixUserDetailsHelper.isAuthenticated()) {
 			SessionVO sessionVO = (SessionVO) FelixUserDetailsHelper.getAuthenticatedUser();
-			MDC.put("userId", sessionVO.getUserId());
+			MDC.put("staffNo", sessionVO.getStaffNo());
 		} else {
-			MDC.put("userId", "NOT LOG IN");
+			MDC.put("staffNo", "guest");
 		}
 		
-		
+		MDC.put("ipAddress", FelixUserDetailsHelper.getIpAddress());
 		
 		return invocation.proceed();
 	}

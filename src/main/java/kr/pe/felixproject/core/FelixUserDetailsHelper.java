@@ -3,8 +3,11 @@ package kr.pe.felixproject.core;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 public class FelixUserDetailsHelper {
 
@@ -30,6 +33,12 @@ public class FelixUserDetailsHelper {
 				return true;
 			}
 		}
+
+	}
+
+	public static String getIpAddress() {
+		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+		return request.getRemoteAddr();
 
 	}
 

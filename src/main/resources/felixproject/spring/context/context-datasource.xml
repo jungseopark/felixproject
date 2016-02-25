@@ -11,6 +11,10 @@
         </property>
     </bean>
     
+    <bean class="kr.pe.felixproject.core.FelixLogConnectionFactory">
+      <property name="dataSource" ref="dataSource"/>
+    </bean>
+    
     <alias name="dataSource-${Globals.DbType}" alias="dataSource" />
     
     <bean id="dataSource-mysql" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">

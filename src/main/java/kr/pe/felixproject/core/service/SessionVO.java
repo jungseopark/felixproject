@@ -14,6 +14,12 @@ public class SessionVO implements Serializable {
 
 	private String ipAddress;
 
+	private String staffNo;
+
+	public String toString() {
+		return ToStringBuilder.reflectionToString(this);
+	}
+
 	public String getUserId() {
 		return userId;
 	}
@@ -37,9 +43,13 @@ public class SessionVO implements Serializable {
 	public void setIpAddress(String ipAddress) {
 		this.ipAddress = ipAddress;
 	}
-	
-	public String toString() {
-    	return ToStringBuilder.reflectionToString(this);
-    }
+
+	public String getStaffNo() {
+		return staffNo;
+	}
+
+	public void setStaffNo(String staffNo) {
+		this.staffNo = staffNo;
+	}
 
 }

@@ -2,6 +2,8 @@ package kr.pe.felixproject.common.service;
 
 import java.io.Serializable;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 public class LogInOutVO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -13,6 +15,12 @@ public class LogInOutVO implements Serializable {
 	private String userId;
 
 	private String userName;
+
+	private String staffNo;
+
+	public String toString() {
+		return ToStringBuilder.reflectionToString(this);
+	}
 
 	public String getSearchUserId() {
 		return searchUserId;
@@ -44,6 +52,14 @@ public class LogInOutVO implements Serializable {
 
 	public void setUserName(String userName) {
 		this.userName = userName;
+	}
+
+	public String getStaffNo() {
+		return staffNo;
+	}
+
+	public void setStaffNo(String staffNo) {
+		this.staffNo = staffNo;
 	}
 
 }

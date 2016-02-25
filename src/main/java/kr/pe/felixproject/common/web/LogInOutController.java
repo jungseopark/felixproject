@@ -43,6 +43,7 @@ public class LogInOutController {
 			sessionVO.setUserId(resultVO.getUserId());
 			sessionVO.setUserName(resultVO.getUserName());
 			sessionVO.setIpAddress(clientIpAddress);
+			sessionVO.setStaffNo(resultVO.getStaffNo());
 			request.getSession().setAttribute("SessionVO", sessionVO);
 			return "forward:/common/staffMainView.do";
 		} else {

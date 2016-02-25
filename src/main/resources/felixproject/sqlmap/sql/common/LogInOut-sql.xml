@@ -6,6 +6,7 @@
 	<resultMap id="logInUser" type="kr.pe.felixproject.common.service.LogInOutVO">
 		<result property="userId" column="USER_ID" />
 		<result property="userName" column="USER_NAME" />
+		<result property="staffNo" column="STAFF_NO" />
 	</resultMap>
 
 	<select id="encryptPassword" parameterType="String" resultType="String">
@@ -15,8 +16,9 @@
 	<select id="actionLogIn" parameterType="logInOutVO" resultMap="logInUser">
 		<![CDATA[ 
 			SELECT  a.USER_ID,
-			        a.USER_NAME
-			  FROM  TN_LOGINUSER a
+			        a.USER_NAME,
+			        a.STAFF_NO
+			  FROM  TN_USER a
 			 WHERE  a.USER_ID = #{searchUserId}
 			   AND  a.USER_PASSWORD = #{searchUserPassword}
 		]]>
