@@ -11,6 +11,7 @@
 		</Console>
 		
 		<JDBC name="databaseAppender" tableName="TN_SQLLOG">
+			<!-- <RegexFilter regex=".*  .*" onMatch="DENY" onMismatch="ACCEPT"/> -->
 			<ConnectionFactory class="kr.pe.felixproject.core.FelixLogConnectionFactory" method="getDatabaseConnection" />
 			<Column name="LOG_SEQ" literal="DATE_FORMAT(now(6),'%Y%m%d%H%i%s%f')" />
 			<Column name="LOG_LEVEL" pattern="%level" />
