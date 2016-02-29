@@ -31,7 +31,7 @@ public class LogInOutController {
 	public String logInUserView(@ModelAttribute("loginVO") LogInOutVO logInVO) throws Exception {
 		return "login";
 	}
-
+	
 	@RequestMapping(value = "/common/actionLogIn.do")
 	public String actionLogIn(@ModelAttribute("loginVO") LogInOutVO logInVO, HttpServletRequest request, ModelMap model) throws Exception {
 		String clientIpAddress = ClientInformation.getClientIp(request);
