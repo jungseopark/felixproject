@@ -16,15 +16,14 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
 @Controller
 public class LogInOutController {
-	
-	private Logger Log = LoggerFactory.getLogger(this.getClass());
+
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Resource(name = "LogInOutService")
 	LogInOutService logInOutService;
-	
+
 	@Resource(name = "felixMessageSource")
 	FelixMessageSource felixMessageSource;
 
@@ -37,6 +36,8 @@ public class LogInOutController {
 	public String actionLogIn(@ModelAttribute("loginVO") LogInOutVO logInVO, HttpServletRequest request, ModelMap model) throws Exception {
 		String clientIpAddress = ClientInformation.getClientIp(request);
 		LogInOutVO resultVO = logInOutService.actionLogIn(logInVO);
+
+		logger.debug("### Client IP Address : {}", clientIpAddress);
 
 		if (resultVO != null && resultVO.getUserId() != null && !("").equals(resultVO.getUserId())) {
 			SessionVO sessionVO = new SessionVO();
