@@ -3,7 +3,7 @@
 
 <mapper namespace="kr.pe.felixproject.core.service.impl.WebLogMapper">
 
-	<insert id="insertWebLog" parameterType="webLogVO">
+	<insert id="insertWebLog" parameterType="webLog">
 		<![CDATA[ 
 			INSERT INTO TN_WEBLOG ( 
 				   LOG_SEQ, 
@@ -18,5 +18,5 @@
 			)       
 		]]>
 	</insert>
-	
+
 </mapper>

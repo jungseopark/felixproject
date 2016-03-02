@@ -1,7 +1,9 @@
 package kr.pe.felixproject.core.service;
 
+import kr.pe.felixproject.api.service.MethodLog;
+
 public interface MethodLogService {
 	
-	void logInsertMethodLog(MethodLogVO vo) throws Exception;
+	void logInsertMethodLog(MethodLog vo) throws Exception;
 
 }

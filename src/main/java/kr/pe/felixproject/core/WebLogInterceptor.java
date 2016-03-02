@@ -4,11 +4,10 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kr.pe.felixproject.api.service.WebLog;
 import kr.pe.felixproject.core.service.SessionVO;
 import kr.pe.felixproject.core.service.WebLogService;
-import kr.pe.felixproject.core.service.WebLogVO;
 
-import org.apache.log4j.MDC;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.ModelAndView;
@@ -23,7 +22,7 @@ public class WebLogInterceptor extends HandlerInterceptorAdapter {
 
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
 
-		WebLogVO webLog = new WebLogVO();
+		WebLog vo = new WebLog();
 		String staffNo = "guest";
 
 		Boolean isAuthenticated = FelixUserDetailsHelper.isAuthenticated();
@@ -32,11 +31,11 @@ public class WebLogInterceptor extends HandlerInterceptorAdapter {
 			staffNo = session.getStaffNo();
 		}
 
-		webLog.setStaffNo(staffNo);
-		webLog.setUrl(request.getRequestURI());
-		webLog.setIpAddress(request.getRemoteAddr());
+		vo.setStaffNo(staffNo);
+		vo.setUrl(request.getRequestURI());
+		vo.setIpAddress(request.getRemoteAddr());
 
-		webLogService.insertWebLog(webLog);
+		webLogService.insertWebLog(vo);
 	}
 
 }

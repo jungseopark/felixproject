@@ -2,8 +2,8 @@ package kr.pe.felixproject.core;
 
 import javax.annotation.Resource;
 
+import kr.pe.felixproject.api.service.MethodLog;
 import kr.pe.felixproject.core.service.MethodLogService;
-import kr.pe.felixproject.core.service.MethodLogVO;
 import kr.pe.felixproject.core.service.SessionVO;
 
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -25,7 +25,7 @@ public class MethodLogAspect {
 			ipAddress = session.getIpAddress();
 		}
 
-		MethodLogVO vo = new MethodLogVO();
+		MethodLog vo = new MethodLog();
 		vo.setClassName(joinPoint.getTarget().getClass().getName());
 		vo.setMethodName(joinPoint.getSignature().getName());
 		vo.setIpAddress(ipAddress);

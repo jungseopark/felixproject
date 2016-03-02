@@ -2,11 +2,11 @@ package kr.pe.felixproject.core.service.impl;
 
 import javax.annotation.Resource;
 
-import org.springframework.stereotype.Service;
-
+import kr.pe.felixproject.api.service.WebLog;
 import kr.pe.felixproject.core.FelixAbstractServiceImpl;
 import kr.pe.felixproject.core.service.WebLogService;
-import kr.pe.felixproject.core.service.WebLogVO;
+
+import org.springframework.stereotype.Service;
 
 @Service("WebLogService")
 public class WebLogServiceImpl extends FelixAbstractServiceImpl implements WebLogService {
@@ -14,7 +14,7 @@ public class WebLogServiceImpl extends FelixAbstractServiceImpl implements WebLo
 	@Resource(name="WebLogDAO")
 	WebLogMapper webLogDAO;
 	
-	public void insertWebLog(WebLogVO vo) throws Exception {
+	public void insertWebLog(WebLog vo) throws Exception {
 		webLogDAO.insertWebLog(vo);
 	}
 
