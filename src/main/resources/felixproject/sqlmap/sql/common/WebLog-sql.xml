@@ -3,6 +3,24 @@
 
 <mapper namespace="kr.pe.felixproject.core.service.impl.WebLogMapper">
 
+	<resultMap id="webLogList" type="kr.pe.felixproject.core.service.WebLogVO">
+		<result property="logSeq" column="LOG_SEQ" />
+		<result property="url" column="URL" />
+		<result property="staffNo" column="STAFF_NO" />
+		<result property="ipAddress" column="IPADDRESS" />
+	</resultMap>
+
+	<select id="selectWebLogList" parameterType="webLogVO" resultMap="webLogList">
+		<![CDATA[ 
+			SELECT   a.LOG_SEQ,
+			         a.URL,
+			         a.STAFF_NO,
+			         a.IPADDRESS
+			FROM     TN_WEBLOG a
+			ORDER BY a.LOG_SEQ DESC
+		]]>
+	</select>
+
 	<insert id="insertWebLog" parameterType="webLog">
 		<![CDATA[ 
 			INSERT INTO TN_WEBLOG ( 
