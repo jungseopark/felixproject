@@ -70,8 +70,11 @@ Jdbc.audit, jdbc.resultset, jdbc.connection은 방대한 로그를 남기기 때
 		<Logger name="kr.pe.felixproject" level="DEBUG" additivity="false">
 			<AppenderRef ref="consoleAppender" />
 		</Logger>
+		<Logger name="org.springframework" level="DEBUG" additivity="false">
+			<AppenderRef ref="consoleAppender" />
+		</Logger>
 
-		<Root level="ERROR">
+		<Root level="DBEUG">
 			<AppenderRef ref="consoleAppender" />
 		</Root>
 	</Loggers>

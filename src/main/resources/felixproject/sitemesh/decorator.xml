@@ -13,7 +13,7 @@
 	<decorator name="footerInc" page="/WEB-INF/jsp/include/footerInc.jsp"/>
 	
 	<excludes>
-		<pattern>/common/forwardLoginPage.do</pattern>
+		<pattern>/common/logInPageView.do</pattern>
 	</excludes>
 		
 </decorators>
