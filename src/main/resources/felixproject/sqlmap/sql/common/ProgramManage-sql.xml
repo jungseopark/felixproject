@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.pe.felixproject.common.service.impl.ProgramManageMapper">
+
+	<insert id="insertProgram" parameterType="methodLog">
+		<![CDATA[ 
+			INSERT INTO TN_PROGRAM ( 
+				   PROGRAM_ID, 
+				   NAME,
+				   DESCRIPTION, 
+				   URL
+			) VALUES (
+			       #{programId}
+			       #{name},
+			       #{description},
+			       #{url},
+			       #{ipAddress}
+			)       
+		]]>
+	</insert>
+	
+</mapper>

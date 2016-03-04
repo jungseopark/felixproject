@@ -1,6 +1,5 @@
-package kr.pe.felixproject.core.service;
+package kr.pe.felixproject.common.service;
 
-import kr.pe.felixproject.api.service.MethodLog;
 
 public interface MethodLogService {
 	

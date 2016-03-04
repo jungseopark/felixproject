@@ -4,9 +4,9 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import kr.pe.felixproject.api.service.WebLog;
+import kr.pe.felixproject.common.service.WebLog;
+import kr.pe.felixproject.common.service.WebLogService;
 import kr.pe.felixproject.core.service.SessionVO;
-import kr.pe.felixproject.core.service.WebLogService;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

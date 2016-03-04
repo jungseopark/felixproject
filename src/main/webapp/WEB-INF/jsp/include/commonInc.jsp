@@ -10,4 +10,4 @@
 <link rel="stylesheet" type="text/css" href="<c:url value='/scripts/css/common.css'/>">
 
 <!-- javascripts -->
-<script src="<c:url value='/scripts/js/jquery/jquery-1.11.3.min.js'/>"></script>
+<script src="<c:url value='/scripts/js/jquery/jquery-1.12.1.min.js'/>"></script>

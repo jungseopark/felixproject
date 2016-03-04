@@ -1,10 +1,10 @@
-package kr.pe.felixproject.core.service.impl;
+package kr.pe.felixproject.common.service.impl;
 
 import javax.annotation.Resource;
 
-import kr.pe.felixproject.api.service.MethodLog;
+import kr.pe.felixproject.common.service.MethodLog;
+import kr.pe.felixproject.common.service.MethodLogService;
 import kr.pe.felixproject.core.FelixAbstractServiceImpl;
-import kr.pe.felixproject.core.service.MethodLogService;
 
 import org.springframework.stereotype.Service;
 

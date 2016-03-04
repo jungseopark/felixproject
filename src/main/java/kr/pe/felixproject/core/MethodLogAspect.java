@@ -2,8 +2,8 @@ package kr.pe.felixproject.core;
 
 import javax.annotation.Resource;
 
-import kr.pe.felixproject.api.service.MethodLog;
-import kr.pe.felixproject.core.service.MethodLogService;
+import kr.pe.felixproject.common.service.MethodLog;
+import kr.pe.felixproject.common.service.MethodLogService;
 import kr.pe.felixproject.core.service.SessionVO;
 
 import org.aspectj.lang.ProceedingJoinPoint;

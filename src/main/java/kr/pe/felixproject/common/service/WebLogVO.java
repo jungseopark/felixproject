@@ -1,10 +1,10 @@
-package kr.pe.felixproject.api.service;
+package kr.pe.felixproject.common.service;
 
 import java.io.Serializable;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public class WebLog implements Serializable {
+public class WebLogVO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 

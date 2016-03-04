@@ -1,6 +1,6 @@
-package kr.pe.felixproject.core.service.impl;
+package kr.pe.felixproject.common.service.impl;
 
-import kr.pe.felixproject.api.service.MethodLog;
+import kr.pe.felixproject.common.service.MethodLog;
 import egovframework.rte.psl.dataaccess.mapper.Mapper;
 
 @Mapper("MethodLogDAO")

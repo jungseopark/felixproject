@@ -1,18 +1,16 @@
-package kr.pe.felixproject.api.service;
+package kr.pe.felixproject.common.service;
 
 import java.io.Serializable;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public class MethodLog implements Serializable {
+public class WebLog implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	private String logSeq;
 
-	private String className;
-
-	private String methodName;
+	private String url;
 
 	private String staffNo;
 
@@ -30,20 +28,12 @@ public class MethodLog implements Serializable {
 		this.logSeq = logSeq;
 	}
 
-	public String getClassName() {
-		return className;
+	public String getUrl() {
+		return url;
 	}
 
-	public void setClassName(String className) {
-		this.className = className;
-	}
-
-	public String getMethodName() {
-		return methodName;
-	}
-
-	public void setMethodName(String methodName) {
-		this.methodName = methodName;
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
 	public String getStaffNo() {

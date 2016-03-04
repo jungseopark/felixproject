@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="kr.pe.felixproject.core.service.impl.WebLogMapper">
+<mapper namespace="kr.pe.felixproject.common.service.impl.WebLogMapper">
 
-	<resultMap id="webLogList" type="kr.pe.felixproject.core.service.WebLogVO">
+	<resultMap id="webLogList" type="kr.pe.felixproject.common.service.WebLogVO">
 		<result property="logSeq" column="LOG_SEQ" />
 		<result property="url" column="URL" />
 		<result property="staffNo" column="STAFF_NO" />

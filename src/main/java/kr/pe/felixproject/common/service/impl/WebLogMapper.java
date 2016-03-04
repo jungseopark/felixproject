@@ -1,9 +1,9 @@
-package kr.pe.felixproject.core.service.impl;
+package kr.pe.felixproject.common.service.impl;
 
 import java.util.List;
 
-import kr.pe.felixproject.api.service.WebLog;
-import kr.pe.felixproject.core.service.WebLogVO;
+import kr.pe.felixproject.common.service.WebLog;
+import kr.pe.felixproject.common.service.WebLogVO;
 import egovframework.rte.psl.dataaccess.mapper.Mapper;
 
 @Mapper("WebLogDAO")

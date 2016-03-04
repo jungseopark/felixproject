@@ -1,8 +1,6 @@
-package kr.pe.felixproject.core.service;
+package kr.pe.felixproject.common.service;
 
 import java.util.List;
-
-import kr.pe.felixproject.api.service.WebLog;
 
 public interface WebLogService {
 
