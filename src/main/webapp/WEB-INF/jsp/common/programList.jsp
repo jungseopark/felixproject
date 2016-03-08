@@ -8,6 +8,8 @@
 <html>
 <head>
 <title>PROGRAM LIST</title>
+<script type="text/javascript">
+</script>
 </head>
 <body>
 <form:form modelAttribute="searchVO" method="post">
