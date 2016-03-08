@@ -10,7 +10,7 @@
 		<result property="ipAddress" column="IPADDRESS" />
 	</resultMap>
 
-	<select id="selectWebLogList" parameterType="webLogVO" resultMap="webLogList">
+	<select id="selectWebLogList" parameterType="webLogVO" resultMap="webLogList" lang="raw">
 		<![CDATA[ 
 			SELECT   a.LOG_SEQ,
 			         a.URL,
