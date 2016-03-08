@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class WebLogManageController {
 
-	private final Logger logger = LoggerFactory.getLogger(this.getClass());
+	private static Logger logger = LoggerFactory.getLogger(WebLogManageController.class);
 
 	@Resource(name = "WebLogService")
 	WebLogService webLogService;
@@ -39,8 +39,8 @@ public class WebLogManageController {
 	}
 
 	@RequestMapping(value = "/common/selectWebLogListJSON.do")
-	public @ResponseBody
-	Object selectWebLogListJSON(@ModelAttribute("SearchVO") WebLogVO searchVO, ModelMap model) throws Exception {
+	@ResponseBody
+	public Object selectWebLogListJSON(@ModelAttribute("SearchVO") WebLogVO searchVO, ModelMap model) throws Exception {
 		List<WebLogVO> result = webLogService.selectWebLogList(searchVO);
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("data", result);
