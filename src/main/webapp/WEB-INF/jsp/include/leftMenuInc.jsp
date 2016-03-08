@@ -4,4 +4,5 @@
 	<li><a href="/common/firstWebLogList.do">Web Log</a></li>
 	<li><a href="/common/firstWebLogListJSON.do">Web Log JSON</a></li>
 	<li><a href="/common/selectWebLogListJSON.do">Web Log JSON</a></li>
+	<li><a href="/common/programListView.do">Program List</a></li>
 </ul>
