@@ -3,7 +3,7 @@
 
 <mapper namespace="kr.pe.felixproject.common.service.impl.ProgramManageMapper">
 
-	<insert id="insertProgram" parameterType="methodLog">
+	<insert id="insertProgram" parameterType="program">
 		<![CDATA[ 
 			INSERT INTO TN_PROGRAM ( 
 				   PROGRAM_ID, 
