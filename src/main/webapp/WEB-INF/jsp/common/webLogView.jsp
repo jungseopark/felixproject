@@ -6,7 +6,6 @@
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <fmt:bundle basename="felixproject.message-common"/>
 <fmt:setLocale value="en"/>
-<!DOCTYPE html>
 <html>
 <head>
 <title>WEB LOG PAGE</title>
