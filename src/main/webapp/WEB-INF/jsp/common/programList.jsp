@@ -11,8 +11,28 @@
 </head>
 <body>
 <form:form modelAttribute="searchVO" method="post">
-	<form:input  path="searchName"/>
-	<input type="button" value="search">
+<table>
+	<thead>
+		<tr>
+			<th>아이디</th><th>프로그램명</th><th>설명</th><th>주소</th>
+		</tr>
+	</thead>
+	<tbody>
+	 <c:forEach var="result" items="${resultList}" varStatus="status">
+	 	<tr>
+		 	<td><c:out value="${result.programId}"/></td> 
+		 	<td><c:out value="${result.name}"/></td>
+		 	<td><c:out value="${result.description}"/></td>
+		 	<td><c:out value="${result.url}"/></td>
+		</tr>	
+	 </c:forEach>
+ 	</tbody>
+ 	<tfoot>
+		<tr>
+			<th>아이디</th><th>프로그램명</th><th>설명</th><th>주소</th>
+		</tr>
+	</tfoot>
+</table>
 </form:form>
 </body>
 </html>

@@ -3,6 +3,24 @@
 
 <mapper namespace="kr.pe.felixproject.common.service.impl.ProgramManageMapper">
 
+	<resultMap id="programList" type="kr.pe.felixproject.common.service.ProgramVO">
+		<result property="programId" column="PROGRAM_ID" />
+		<result property="name" column="NAME" />
+		<result property="description" column="DESCRIPTION" />
+		<result property="url" column="URL" />
+	</resultMap>
+
+	<select id="selectProgramList" parameterType="programVO" resultMap="programList">
+		<![CDATA[
+			SELECT a.PROGRAM_ID,
+			       a.NAME,
+			       a.DESCRIPTION,
+			       a.URL
+			FROM TN_PROGRAM a
+			WHERE 1 = 1
+		]]>
+	</select>
+
 	<insert id="insertProgram" parameterType="program">
 		<![CDATA[ 
 			INSERT INTO TN_PROGRAM ( 

@@ -1,5 +1,7 @@
 package kr.pe.felixproject.common.web;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import kr.pe.felixproject.common.service.ProgramManageService;
@@ -19,6 +21,8 @@ public class ProgramManageController extends FelixAbstractController {
 
 	@RequestMapping(value = "/common/programListView.do")
 	public String firstProgramList(@ModelAttribute("searchVO") ProgramVO searchVO, ModelMap model) throws Exception {
+		List<ProgramVO> resultList = programManageService.selectProgramList(searchVO);
+		model.addAttribute("resultList", resultList);
 		return "/common/programList";
 	}
 }
