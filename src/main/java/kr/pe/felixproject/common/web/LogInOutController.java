@@ -5,21 +5,18 @@ import javax.servlet.http.HttpServletRequest;
 
 import kr.pe.felixproject.common.service.LogInOutService;
 import kr.pe.felixproject.common.service.LogInOutVO;
+import kr.pe.felixproject.core.FelixAbstractController;
 import kr.pe.felixproject.core.FelixMessageSource;
 import kr.pe.felixproject.core.service.ClientInformation;
 import kr.pe.felixproject.core.service.SessionVO;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class LogInOutController {
-
-	private final Logger logger = LoggerFactory.getLogger(this.getClass());
+public class LogInOutController extends FelixAbstractController {
 
 	@Resource(name = "LogInOutService")
 	LogInOutService logInOutService;

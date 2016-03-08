@@ -8,9 +8,8 @@ import javax.annotation.Resource;
 
 import kr.pe.felixproject.common.service.WebLogService;
 import kr.pe.felixproject.common.service.WebLogVO;
+import kr.pe.felixproject.core.FelixAbstractController;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -18,9 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class WebLogManageController {
-
-	private static Logger logger = LoggerFactory.getLogger(WebLogManageController.class);
+public class WebLogManageController extends FelixAbstractController {
 
 	@Resource(name = "WebLogService")
 	WebLogService webLogService;
