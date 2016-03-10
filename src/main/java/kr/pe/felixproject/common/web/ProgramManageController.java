@@ -1,9 +1,11 @@
 package kr.pe.felixproject.common.web;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
 
+import kr.pe.felixproject.common.service.Program;
 import kr.pe.felixproject.common.service.ProgramManageService;
 import kr.pe.felixproject.common.service.ProgramVO;
 import kr.pe.felixproject.core.FelixAbstractController;
@@ -28,7 +30,7 @@ public class ProgramManageController extends FelixAbstractController {
 	 */
 	@RequestMapping(value = "/common/programListView.do")
 	public String firstProgramList(@ModelAttribute("searchVO") ProgramVO searchVO, ModelMap model) throws Exception {
-		List<ProgramVO> resultList = programManageService.selectProgramList(searchVO);
+		List<ProgramVO> resultList = new ArrayList<ProgramVO>();
 		model.addAttribute("resultList", resultList);
 		return "/common/programList";
 	}
@@ -42,6 +44,8 @@ public class ProgramManageController extends FelixAbstractController {
 	 */
 	@RequestMapping(value = "/common/selectProgramList.do")
 	public String selectProgramList(@ModelAttribute("searchVO") ProgramVO searchVO, ModelMap model) throws Exception {
+		List<ProgramVO> resultList = programManageService.selectProgramList(searchVO);
+		model.addAttribute("resultList", resultList);
 		return "/common/programList";
 	}
 
@@ -77,8 +81,9 @@ public class ProgramManageController extends FelixAbstractController {
 	 * @throws Exception
 	 */
 	@RequestMapping(value = "/common/insertProgram.do")
-	public String insertProgram(@ModelAttribute("searchVO") ProgramVO searchVO, ModelMap model) throws Exception {
-		return "forward:/common/programInquiry";
+	public String insertProgram(@ModelAttribute("searchVO") ProgramVO searchVO, @ModelAttribute("program") Program program, ModelMap model) throws Exception {
+		programManageService.insertProgram(program);
+		return "forward:/common/selectProgram.do";
 	}
 
 	/**

@@ -6,6 +6,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
+import kr.pe.felixproject.common.service.Program;
 import kr.pe.felixproject.common.service.ProgramManageService;
 import kr.pe.felixproject.common.service.ProgramVO;
 import kr.pe.felixproject.core.FelixAbstractServiceImpl;
@@ -18,6 +19,10 @@ public class ProgramManageServiceImpl extends FelixAbstractServiceImpl implement
 
 	public List<ProgramVO> selectProgramList(ProgramVO vo) throws Exception {
 		return programManageMapper.selectProgramList(vo);
+	}
+
+	public void insertProgram(Program vo) throws Exception {
+		programManageMapper.insertProgram(vo);
 	}
 
 }

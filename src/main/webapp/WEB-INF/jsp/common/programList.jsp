@@ -9,10 +9,23 @@
 <head>
 <title>PROGRAM LIST</title>
 <script type="text/javascript">
+$(document).ready(function(){
+	$("#searchButton").click(function(){
+		document.contentForm.action = "/common/selectProgramList.do";
+		document.contentForm.submit();
+	});
+	$("#addButton").click(function(){
+		document.contentForm.action = "/common/addProgram.do";
+		document.contentForm.submit();
+	});
+});
 </script>
 </head>
 <body>
-<form:form modelAttribute="searchVO" method="post">
+<form:form name="contentForm" modelAttribute="searchVO" method="post">
+<form:input id="searchName" path="searchName"/>
+<input id="searchButton" type="button" value="조회">
+<input id="addButton" type="button" value="신규">
 <table>
 	<thead>
 		<tr>

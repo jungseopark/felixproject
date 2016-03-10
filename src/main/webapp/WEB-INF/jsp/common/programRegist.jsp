@@ -1,12 +1,30 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="ui" uri="http://egovframework.gov/ctl/ui"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Program Regist</title>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#insertButton").click(function(){
+		document.contentForm.action = "/common/insertProgram.do";
+		document.contentForm.submit();
+	});
+});
+</script>
 </head>
 <body>
-
+<form:form name="contentForm" modelAttribute="searchVO" method="post">
+	<form:hidden path="searchName"/><br>
+	# program id : <form:input path="programId"/><br>
+	# name : <form:input path="name"/><br>
+	# description : <form:input path="description"/><br>
+	# url : <form:input path="url"/><br>
+	<input id="insertButton" type="button" value="저장">
+</form:form>
 </body>
 </html>

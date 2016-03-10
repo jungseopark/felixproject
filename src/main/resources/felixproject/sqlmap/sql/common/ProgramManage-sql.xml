@@ -19,6 +19,9 @@
 			FROM TN_PROGRAM a
 			WHERE 1 = 1
 		]]>
+		<if test="searchName != null">
+			<![CDATA[ AND a.NAME LIKE CONCAT ('%',#{searchName},'%') ]]>
+		</if>
 	</select>
 
 	<insert id="insertProgram" parameterType="program">
@@ -29,11 +32,10 @@
 				   DESCRIPTION, 
 				   URL
 			) VALUES (
-			       #{programId}
+			       #{programId},
 			       #{name},
 			       #{description},
-			       #{url},
-			       #{ipAddress}
+			       #{url}
 			)       
 		]]>
 	</insert>
