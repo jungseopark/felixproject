@@ -5,7 +5,7 @@ import java.io.Serializable;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.ibatis.type.Alias;
 
-@Alias("logInOutVO")
+@Alias("LogInOutVO")
 public class LogInOutVO implements Serializable {
 
 	private static final long serialVersionUID = 1L;

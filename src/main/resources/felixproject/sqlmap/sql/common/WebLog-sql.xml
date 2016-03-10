@@ -10,7 +10,7 @@
 		<result property="ipAddress" column="IPADDRESS" />
 	</resultMap>
 
-	<select id="selectWebLogList" parameterType="webLogVO" resultMap="webLogList" lang="raw">
+	<select id="selectWebLogList" parameterType="WebLogVO" resultMap="webLogList" lang="raw">
 		<![CDATA[ 
 			SELECT   a.LOG_SEQ,
 			         a.URL,
@@ -21,7 +21,7 @@
 		]]>
 	</select>
 
-	<insert id="insertWebLog" parameterType="webLog">
+	<insert id="insertWebLog" parameterType="WebLog">
 		<![CDATA[ 
 			INSERT INTO TN_WEBLOG ( 
 				   LOG_SEQ, 

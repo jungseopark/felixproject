@@ -3,7 +3,7 @@
 
 <mapper namespace="kr.pe.felixproject.common.service.impl.LogInOutMapper">
 
-	<resultMap id="logInUser" type="kr.pe.felixproject.common.service.LogInOutVO">
+	<resultMap id="logInUser" type="LogInOutVO">
 		<result property="userId" column="USER_ID" />
 		<result property="userName" column="USER_NAME" />
 		<result property="staffNo" column="STAFF_NO" />
@@ -13,7 +13,7 @@
 		<![CDATA[ SELECT SHA1(#{password}) ]]>
 	</select>
 	
-	<select id="actionLogIn" parameterType="logInOutVO" resultMap="logInUser">
+	<select id="actionLogIn" parameterType="LogInOutVO" resultMap="logInUser">
 		<![CDATA[ 
 			SELECT  a.USER_ID,
 			        a.USER_NAME,

@@ -4,12 +4,7 @@
 <configuration>
 
 	<typeAliases>
-		<typeAlias alias="methodLog" type="kr.pe.felixproject.common.service.MethodLog" />
-		<typeAlias alias="webLog" type="kr.pe.felixproject.common.service.WebLog" />
-		<typeAlias alias="program" type="kr.pe.felixproject.common.service.Program" />
-
-		<typeAlias alias="webLogVO" type="kr.pe.felixproject.common.service.WebLogVO" />
-		<typeAlias alias="programVO" type="kr.pe.felixproject.common.service.ProgramVO" />
+		<package name="kr.pe.felixproject.common.service"/>
 	</typeAliases>
 	
 	<plugins>

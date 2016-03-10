@@ -3,7 +3,7 @@
 
 <mapper namespace="kr.pe.felixproject.common.service.impl.MethodLogMapper">
 
-	<insert id="logInsertMethodLog" parameterType="methodLog">
+	<insert id="logInsertMethodLog" parameterType="MethodLog">
 		<![CDATA[ 
 			INSERT INTO TN_METHODLOG ( 
 				   LOG_SEQ, 

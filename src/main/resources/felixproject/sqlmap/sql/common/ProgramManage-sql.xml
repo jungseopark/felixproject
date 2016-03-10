@@ -10,7 +10,7 @@
 		<result property="url" column="URL" />
 	</resultMap>
 
-	<select id="selectProgramList" parameterType="programVO" resultMap="programList">
+	<select id="selectProgramList" parameterType="ProgramVO" resultMap="programList">
 		<![CDATA[
 			SELECT a.PROGRAM_ID,
 			       a.NAME,
@@ -24,7 +24,7 @@
 		</if>
 	</select>
 
-	<insert id="insertProgram" parameterType="program">
+	<insert id="insertProgram" parameterType="Program">
 		<![CDATA[ 
 			INSERT INTO TN_PROGRAM ( 
 				   PROGRAM_ID, 
