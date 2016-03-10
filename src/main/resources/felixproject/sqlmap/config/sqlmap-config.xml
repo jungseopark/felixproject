@@ -8,7 +8,6 @@
 		<typeAlias alias="webLog" type="kr.pe.felixproject.common.service.WebLog" />
 		<typeAlias alias="program" type="kr.pe.felixproject.common.service.Program" />
 
-		<typeAlias alias="logInOutVO" type="kr.pe.felixproject.common.service.LogInOutVO" />
 		<typeAlias alias="webLogVO" type="kr.pe.felixproject.common.service.WebLogVO" />
 		<typeAlias alias="programVO" type="kr.pe.felixproject.common.service.ProgramVO" />
 	</typeAliases>
