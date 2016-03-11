@@ -12,5 +12,7 @@ public interface ProgramManageMapper {
 	public List<ProgramVO> selectProgramList(ProgramVO vo);
 
 	public void insertProgram(Program vo);
+	
+	public void updateProgram(Program vo);
 
 }

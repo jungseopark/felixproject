@@ -40,4 +40,14 @@
 		]]>
 	</insert>
 	
+	<update id="updateProgram" parameterType="Program">
+		<![CDATA[ 
+			UPDATE TN_PROGRAM
+			SET    NAME = #{name},
+				   DESCRIPTION = #{description}, 
+				   URL = #{url}
+			WHERE  PROGRAM_ID = #{programId}
+		]]>
+	</update>
+	
 </mapper>

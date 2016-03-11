@@ -25,4 +25,8 @@ public class ProgramManageServiceImpl extends FelixAbstractServiceImpl implement
 		programManageMapper.insertProgram(vo);
 	}
 
+	public void updateProgram(Program vo) throws Exception {
+		programManageMapper.updateProgram(vo);
+	}
+
 }
