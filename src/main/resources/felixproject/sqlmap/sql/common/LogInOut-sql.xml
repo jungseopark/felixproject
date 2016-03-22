@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="kr.pe.felixproject.common.service.impl.LogInOutMapper">
+<mapper namespace="kr.pe.felixproject.commons.loginout.service.impl.LogInOutMapper">
 
 	<resultMap id="logInUser" type="LogInOutVO">
 		<result property="userId" column="USER_ID" />
@@ -18,7 +18,7 @@
 			SELECT  a.USER_ID,
 			        a.USER_NAME,
 			        a.STAFF_NO
-			  FROM  TN_USER a
+			  FROM  TN_USER_INFO a
 			 WHERE  a.USER_ID = #{searchUserId}
 			   AND  a.USER_PASSWORD = #{searchUserPassword}
 		]]>

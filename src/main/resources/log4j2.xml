@@ -41,18 +41,18 @@ Jdbc.audit, jdbc.resultset, jdbc.connection은 방대한 로그를 남기기 때
 			<PatternLayout pattern="[%-5p %X{staffNo} %c] %m%n" />
 		</Console>
 		
-		<JDBC name="databaseAppender" tableName="TN_SQLLOG">
+		<JDBC name="databaseAppender" tableName="TN_SQL_LOG">
 			<Filters>
 				<RegexFilter regex=".* TN_WEBLOG .*" onMatch="DENY" onMismatch="NEUTRAL"/>
 				<RegexFilter regex=".* TN_METHODLOG .*" onMatch="DENY" onMismatch="NEUTRAL"/>
 			</Filters>
-			<ConnectionFactory class="kr.pe.felixproject.core.FelixLogConnectionFactory" method="getDatabaseConnection" />
+			<ConnectionFactory class="kr.pe.felixproject.commons.log.FelixLogConnectionFactory" method="getDatabaseConnection" />
 			<Column name="LOG_SEQ" literal="DATE_FORMAT(now(6),'%Y%m%d%H%i%s%f')" />
 			<Column name="LOG_LEVEL" pattern="%level" />
 			<Column name="LOGGER" pattern="%logger" />
-			<Column name="QUERY" pattern="%replace{%message}{(${databaseFilter})}{}" />
+			<Column name="LOG_QUERY" pattern="%replace{%message}{(${databaseFilter})}{}" />
 			<Column name="STAFF_NO" pattern="%X{staffNo}" />
-			<Column name="IPADDRESS" pattern="%X{ipAddress}" />
+			<Column name="IP_ADDRESS" pattern="%X{ipAddress}" />
 		</JDBC>
 	</Appenders>
 

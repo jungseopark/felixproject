@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="methodLog" class="kr.pe.felixproject.core.MethodLogAspect" />
+	<bean id="methodLog" class="kr.pe.felixproject.commons.log.aop.MethodLogAspect" />
 
 	<aop:config>
 		<aop:aspect id="logManageAspect" ref="methodLog">

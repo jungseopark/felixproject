@@ -11,7 +11,7 @@
         </property>
     </bean>
     
-    <bean class="kr.pe.felixproject.core.FelixLogConnectionFactory">
+    <bean class="kr.pe.felixproject.commons.log.FelixLogConnectionFactory">
       <property name="dataSource" ref="dataSource"/>
     </bean>
     

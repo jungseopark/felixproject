@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="kr.pe.felixproject.common.service.impl.ProgramManageMapper">
+<mapper namespace="kr.pe.felixproject.commons.auth.service.impl.ProgramManageMapper">
 
-	<resultMap id="programList" type="kr.pe.felixproject.common.service.ProgramVO">
+	<resultMap id="programList" type="ProgramVO">
 		<result property="programId" column="PROGRAM_ID" />
 		<result property="name" column="NAME" />
 		<result property="description" column="DESCRIPTION" />

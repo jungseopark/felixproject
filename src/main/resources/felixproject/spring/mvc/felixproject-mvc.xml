@@ -13,9 +13,9 @@
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Repository" />
 	</context:component-scan>
 
-	<bean id="logInCheckInterceptor" class="kr.pe.felixproject.core.LogInCheckInterceptor"/>
+	<bean id="logInCheckInterceptor" class="kr.pe.felixproject.commons.log.interceptor.LogInCheckInterceptor"/>
 	
-	<bean id="webLogInterceptor" class="kr.pe.felixproject.core.WebLogInterceptor"/>
+	<bean id="webLogInterceptor" class="kr.pe.felixproject.commons.log.interceptor.WebLogInterceptor"/>
 
 	<mvc:interceptors>
 		<ref bean="logInCheckInterceptor"/>

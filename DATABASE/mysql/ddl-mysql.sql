@@ -25,7 +25,7 @@ create table TN_WEB_LOG (
 	primary key(LOG_SEQ)
 );
 
-create table TN_USER (
+create table TN_USER_INFO (
 	USER_ID varchar(20) not null,
 	STAFF_NO varchar(20) not null,
 	USER_NAME varchar(100) not null,
@@ -44,21 +44,25 @@ create table TN_PROGRAM_INFO (
 create table TN_ROLE (
 	ROLE_ID varchar(50) not null,
 	ROLE_NAME varchar(100) not null,
-	DESCRIPTION varchar(200)
+	DESCRIPTION varchar(200),
 	primary key(ROLE_ID)
 );
 
 create table TN_PROGRAM_ROLE (
 	ROLE_ID varchar(50) not null,
-	PROGRAM_ID varchar(50) not null
+	PROGRAM_ID varchar(50) not null,
 	primary key(ROLE_ID, PROGRAM_ID)
 );
 
 create table TN_USER_ROLE (
 	USER_ID varchar(20) not null,
-	ROLE_ID varchar(50) not null
+	ROLE_ID varchar(50) not null,
 	primary key(USER_ID, ROLE_ID)
 );
 
 create table TN_MENU (
+	MENU_ID varchar(50) not null,
+	MENU_NM varchar(100) not null,
+	DESCRIPTION varchar(200),
+	primary key(MENU_ID)
 );
