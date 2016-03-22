@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="name.felix.commons.auth.service.impl.MenuMapper">
+
+	<!-- 
+	<resultMap id="TopMenu" type="MenuVO">
+		<result property="menuId" column="MENU_ID" />
+		<result property="upperMenuId" column="UPPER_MENU_ID" />
+		<result property="programId" column="PROGRAM_ID" />
+		<result property="programUrl" column="PROGRAM_URL" />
+		<result property="menuName" column="MENU_NAME" />
+	</resultMap>
+	 -->
+	 
+	 <resultMap id="TopMenu" type="MenuVO">
+	 	<result property="menuId" column="MENU_ID"/>
+	 	<association property="menuInfo"  javaType="Menu">
+	 		<result property="menuId" column="MENU_ID"/>
+	 		<result property="upperMenuId" column="UPPER_MENU_ID" />
+	 		<result property="programId" column="PROGRAM_ID" />
+	 		<result property="menuName" column="MENU_NAME" />
+	 	</association>
+	 	<association property="programInfo" javaType="Program">
+	 		<result property="programId" column="PROGRAM_ID" />
+	 		<result property="programUrl" column="PROGRAM_URL" />
+	 	</association>
+	</resultMap>
+	
+	<select id="selectTopMenuListByUser" parameterType="MenuVO" resultMap="TopMenu">
+		<![CDATA[
+			SELECT  e.MENU_ID, 
+			        e.UPPER_MENU_ID, 
+			        e.PROGRAM_ID, 
+			        d.PROGRAM_URL, 
+			        e.MENU_NAME
+             FROM   TN_USER a,
+                    TN_USER_ROLE b,
+                    TN_ROLE_MENU c,
+                    TN_PROGRAM d,
+                    TN_MENU e
+            WHERE   a.USER_ID = b.USER_ID 
+              AND   b.ROLE_ID = c.ROLE_ID    
+              AND   c.MENU_ID = e.MENU_ID
+              AND   e.PROGRAM_ID = d.PROGRAM_ID
+              AND   e.MENU_LEVEL < 3
+              AND   a.USER_ID = #{searchUserId}
+         ORDER BY   e.MENU_ORDER
+		]]>
+	</select>
+	
+</mapper>

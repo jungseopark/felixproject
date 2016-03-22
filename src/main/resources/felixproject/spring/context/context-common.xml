@@ -5,13 +5,13 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-	<context:component-scan base-package="kr.pe.felixproject">
+	<context:component-scan base-package="name.felix">
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
 	</context:component-scan>
 
-	<bean id="felixMessageSource" class="kr.pe.felixproject.core.FelixMessageSource">
+	<bean id="felixMessageSource" class="name.felix.core.FelixMessageSource">
         <property name="reloadableResourceBundleMessageSource">
             <ref bean="messageSource" />
         </property> 
@@ -56,6 +56,6 @@
     
     <bean id="antPathMater" class="org.springframework.util.AntPathMatcher" />
     
-    <bean id="defaultTraceHandler" class="kr.pe.felixproject.core.FelixCommonTraceHandler" />
+    <bean id="defaultTraceHandler" class="name.felix.core.FelixTraceHandler" />
     
 </beans>

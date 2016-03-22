@@ -4,13 +4,13 @@
 <configuration>
 
 	<typeAliases>
-		<package name="kr.pe.felixproject.commons.log.service"/>
-		<package name="kr.pe.felixproject.commons.loginout.service"/>
-		<package name="kr.pe.felixproject.commons.auth.service"/>
+		<package name="name.felix.commons.log.service"/>
+		<package name="name.felix.commons.loginout.service"/>
+		<package name="name.felix.commons.auth.service"/>
 	</typeAliases>
 	
 	<plugins>
-		<plugin interceptor="kr.pe.felixproject.commons.log.interceptor.MyBatisLogInterceptor" />
+		<plugin interceptor="name.felix.commons.log.interceptor.MyBatisLogInterceptor" />
 	</plugins>
 	
 </configuration>

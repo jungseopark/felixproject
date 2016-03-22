@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="name.felix.commons.loginout.service.impl.LogInOutMapper">
+
+	<resultMap id="logInUser" type="LogInOutVO">
+		<result property="userId" column="USER_ID" />
+		<result property="userName" column="USER_NAME" />
+		<result property="staffNo" column="STAFF_NO" />
+	</resultMap>
+
+	<select id="encryptPassword" parameterType="String" resultType="String">
+		<![CDATA[ SELECT SHA1(#{password}) ]]>
+	</select>
+	
+	<select id="actionLogIn" parameterType="LogInOutVO" resultMap="logInUser">
+		<![CDATA[ 
+			SELECT  a.USER_ID,
+			        a.USER_NAME,
+			        a.STAFF_NO
+			  FROM  TN_USER a
+			 WHERE  a.USER_ID = #{searchUserId}
+			   AND  a.USER_PASSWORD = #{searchUserPassword}
+		]]>
+	</select>
+	
+</mapper>

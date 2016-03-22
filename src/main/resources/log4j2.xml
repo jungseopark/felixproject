@@ -46,7 +46,7 @@ Jdbc.audit, jdbc.resultset, jdbc.connection은 방대한 로그를 남기기 때
 				<RegexFilter regex=".* TN_WEBLOG .*" onMatch="DENY" onMismatch="NEUTRAL"/>
 				<RegexFilter regex=".* TN_METHODLOG .*" onMatch="DENY" onMismatch="NEUTRAL"/>
 			</Filters>
-			<ConnectionFactory class="kr.pe.felixproject.commons.log.FelixLogConnectionFactory" method="getDatabaseConnection" />
+			<ConnectionFactory class="name.felix.commons.log.FelixLogConnectionFactory" method="getDatabaseConnection" />
 			<Column name="LOG_SEQ" literal="DATE_FORMAT(now(6),'%Y%m%d%H%i%s%f')" />
 			<Column name="LOG_LEVEL" pattern="%level" />
 			<Column name="LOGGER" pattern="%logger" />
@@ -74,7 +74,7 @@ Jdbc.audit, jdbc.resultset, jdbc.connection은 방대한 로그를 남기기 때
 			<AppenderRef ref="consoleAppender" />
 		</Logger>
 
-		<Root level="DBEUG">
+		<Root level="TRACE">
 			<AppenderRef ref="consoleAppender" />
 		</Root>
 	</Loggers>

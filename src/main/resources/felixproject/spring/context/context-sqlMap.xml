@@ -11,7 +11,7 @@
 	</bean>
 
 	<bean class="egovframework.rte.psl.dataaccess.mapper.MapperConfigurer">
-		<property name="basePackage" value="kr.pe.felixproject" />
+		<property name="basePackage" value="name.felix" />
 	</bean>
 
 </beans>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="name.felix.commons.log.service.impl.WebLogMapper">
+
+	<insert id="insertWebLog" parameterType="WebLog">
+		<![CDATA[ 
+			INSERT INTO TN_WEB_LOG ( 
+				   LOG_SEQ, 
+				   URL, 
+				   STAFF_NO, 
+				   IP_ADDRESS
+			) VALUES (
+			       DATE_FORMAT(now(6),'%Y%m%d%H%i%s%f'),
+			       #{url},
+			       #{staffNo},
+			       #{ipAddress}
+			)       
+		]]>
+	</insert>
+
+</mapper>

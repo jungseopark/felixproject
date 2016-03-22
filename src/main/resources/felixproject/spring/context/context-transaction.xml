@@ -18,7 +18,7 @@
     </tx:advice>
     
     <aop:config>
-        <aop:pointcut id="requiredTx" expression="execution(* kr.pe.felixproject..impl.*Impl.*(..))"/>
+        <aop:pointcut id="requiredTx" expression="execution(* name.felix..impl.*Impl.*(..))"/>
         <aop:advisor advice-ref="txAdvice" pointcut-ref="requiredTx" />
     </aop:config>
 

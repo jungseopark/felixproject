@@ -25,7 +25,7 @@ create table TN_WEB_LOG (
 	primary key(LOG_SEQ)
 );
 
-create table TN_USER_INFO (
+create table TN_USER (
 	USER_ID varchar(20) not null,
 	STAFF_NO varchar(20) not null,
 	USER_NAME varchar(100) not null,
@@ -33,12 +33,23 @@ create table TN_USER_INFO (
 	primary key(USER_ID)
 );
 
-create table TN_PROGRAM_INFO (
+create table TN_PROGRAM (
 	PROGRAM_ID varchar(50) not null,
 	PROGRAM_NAME varchar(100) not null,
 	DESCRIPTION varchar(200),
 	PROGRAM_URL varchar(200) not null,
 	primary key(PROGRAM_ID)
+);
+
+create table TN_MENU (
+	MENU_ID varchar(50) not null,
+	MENU_NAME varchar(100) not null,
+	UPPER_MENU_ID varchar(50) not null,
+	MENU_LEVEL integer not null,
+	MENU_ORDER integer not null,
+	PROGRAM_ID varchar(50) not null,
+	DESCRIPTION varchar(200),
+	primary key(MENU_ID)
 );
 
 create table TN_ROLE (
@@ -48,21 +59,16 @@ create table TN_ROLE (
 	primary key(ROLE_ID)
 );
 
-create table TN_PROGRAM_ROLE (
-	ROLE_ID varchar(50) not null,
-	PROGRAM_ID varchar(50) not null,
-	primary key(ROLE_ID, PROGRAM_ID)
-);
-
 create table TN_USER_ROLE (
 	USER_ID varchar(20) not null,
 	ROLE_ID varchar(50) not null,
 	primary key(USER_ID, ROLE_ID)
 );
 
-create table TN_MENU (
+create table TN_ROLE_MENU (
+	ROLE_ID varchar(50) not null,
 	MENU_ID varchar(50) not null,
-	MENU_NM varchar(100) not null,
-	DESCRIPTION varchar(200),
-	primary key(MENU_ID)
+	primary key(ROLE_ID, MENU_ID)
 );
+
+

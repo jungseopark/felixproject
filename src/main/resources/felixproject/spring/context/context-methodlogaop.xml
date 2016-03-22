@@ -4,14 +4,14 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="methodLog" class="kr.pe.felixproject.commons.log.aop.MethodLogAspect" />
+	<bean id="methodLog" class="name.felix.commons.log.aop.MethodLogAspect" />
 
 	<aop:config>
 		<aop:aspect id="logManageAspect" ref="methodLog">
-			<aop:around pointcut="execution(public * kr.pe.felixproject..impl.*Impl.insert*(..))" method="logInsertMethodLog" />
-			<aop:around pointcut="execution(public * kr.pe.felixproject..impl.*Impl.update*(..))" method="logInsertMethodLog" />
-			<aop:around pointcut="execution(public * kr.pe.felixproject..impl.*Impl.delete*(..))" method="logInsertMethodLog" />
-			<aop:around pointcut="execution(public * kr.pe.felixproject..impl.*Impl.select*(..))" method="logInsertMethodLog" />
+			<aop:around pointcut="execution(public * name.felix..impl.*Impl.insert*(..))" method="logInsertMethodLog" />
+			<aop:around pointcut="execution(public * name.felix..impl.*Impl.update*(..))" method="logInsertMethodLog" />
+			<aop:around pointcut="execution(public * name.felix..impl.*Impl.delete*(..))" method="logInsertMethodLog" />
+			<aop:around pointcut="execution(public * name.felix..impl.*Impl.select*(..))" method="logInsertMethodLog" />
 		</aop:aspect>
 	</aop:config>
 

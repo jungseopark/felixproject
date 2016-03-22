@@ -3,9 +3,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Staff Main Page</title>
+<title>STAFF MAIN PAGE</title>
 </head>
 <body>
-
+STAFF MAIN PAGE
 </body>
 </html>
