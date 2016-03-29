@@ -5,18 +5,7 @@ insert into TN_USER(USER_ID, STAFF_NO, USER_NAME, USER_PASSWORD)values('user','u
 insert into TN_PROGRAM(PROGRAM_ID, PROGRAM_NAME, DESCRIPTION, PROGRAM_URL)values('dir','디렉토리','디렉토리','/');
 -- 메뉴목록
 insert into TN_MENU(MENU_ID, MENU_NAME, UPPER_MENU_ID, MENU_LEVEL, MENU_ORDER, PROGRAM_ID, DESCRIPTION)values('0','root','0',0,0,'dir','최상단');
-insert into TN_MENU(MENU_ID, MENU_NAME, UPPER_MENU_ID, MENU_LEVEL, MENU_ORDER, PROGRAM_ID, DESCRIPTION)values('01000000000','1단메뉴1','0',1,1,'dir','1단메뉴1');
-insert into TN_MENU(MENU_ID, MENU_NAME, UPPER_MENU_ID, MENU_LEVEL, MENU_ORDER, PROGRAM_ID, DESCRIPTION)values('02000000000','1단메뉴2','0',1,2,'dir','1단메뉴2');
-insert into TN_MENU(MENU_ID, MENU_NAME, UPPER_MENU_ID, MENU_LEVEL, MENU_ORDER, PROGRAM_ID, DESCRIPTION)values('03000000000','1단메뉴3','0',1,3,'dir','1단메뉴3');
-insert into TN_MENU(MENU_ID, MENU_NAME, UPPER_MENU_ID, MENU_LEVEL, MENU_ORDER, PROGRAM_ID, DESCRIPTION)values('04000000000','1단메뉴4','0',1,4,'dir','1단메뉴4');
-insert into TN_MENU(MENU_ID, MENU_NAME, UPPER_MENU_ID, MENU_LEVEL, MENU_ORDER, PROGRAM_ID, DESCRIPTION)values('05000000000','1단메뉴5','0',1,5,'dir','1단메뉴5');
 insert into TN_MENU(MENU_ID, MENU_NAME, UPPER_MENU_ID, MENU_LEVEL, MENU_ORDER, PROGRAM_ID, DESCRIPTION)values('99000000000','내부시스템관리','0',1,99,'dir','내부시스템관리');
-insert into TN_MENU(MENU_ID, MENU_NAME, UPPER_MENU_ID, MENU_LEVEL, MENU_ORDER, PROGRAM_ID, DESCRIPTION)values('01010000000','2단메뉴1','01000000000',2,1,'dir','2단메뉴1');
-insert into TN_MENU(MENU_ID, MENU_NAME, UPPER_MENU_ID, MENU_LEVEL, MENU_ORDER, PROGRAM_ID, DESCRIPTION)values('01020000000','2단메뉴2','01000000000',2,2,'dir','2단메뉴2');
-insert into TN_MENU(MENU_ID, MENU_NAME, UPPER_MENU_ID, MENU_LEVEL, MENU_ORDER, PROGRAM_ID, DESCRIPTION)values('01010100000','3단메뉴1','01010000000',3,1,'dir','3단메뉴1');
-insert into TN_MENU(MENU_ID, MENU_NAME, UPPER_MENU_ID, MENU_LEVEL, MENU_ORDER, PROGRAM_ID, DESCRIPTION)values('01010200000','3단메뉴2','01010000000',3,2,'dir','3단메뉴2');
-insert into TN_MENU(MENU_ID, MENU_NAME, UPPER_MENU_ID, MENU_LEVEL, MENU_ORDER, PROGRAM_ID, DESCRIPTION)values('01010101000','4단메뉴1','01010100000',4,1,'dir','4단메뉴1');
-insert into TN_MENU(MENU_ID, MENU_NAME, UPPER_MENU_ID, MENU_LEVEL, MENU_ORDER, PROGRAM_ID, DESCRIPTION)values('01010102000','4단메뉴2','01010100000',4,2,'dir','4단메뉴2');
 -- 권한 목록
 insert into TN_ROLE(ROLE_ID, ROLE_NAME, DESCRIPTION)values('ROLE_USER','일반사용자','일반사용자');
 insert into TN_ROLE(ROLE_ID, ROLE_NAME, DESCRIPTION)values('ROLE_ADMIN','시스템관리자','시스템관리자');
@@ -24,16 +13,4 @@ insert into TN_ROLE(ROLE_ID, ROLE_NAME, DESCRIPTION)values('ROLE_ADMIN','시스�
 insert into TN_USER_ROLE(USER_ID, ROLE_ID)values('master','ROLE_ADMIN');
 insert into TN_USER_ROLE(USER_ID, ROLE_ID)values('user','ROLE_USER');
 -- 권한별 메뉴
-insert into TN_ROLE_MENU(ROLE_ID, MENU_ID)values('ROLE_ADMIN', '01000000000');
-insert into TN_ROLE_MENU(ROLE_ID, MENU_ID)values('ROLE_ADMIN', '01010000000');
-insert into TN_ROLE_MENU(ROLE_ID, MENU_ID)values('ROLE_ADMIN', '01020000000');
-insert into TN_ROLE_MENU(ROLE_ID, MENU_ID)values('ROLE_ADMIN', '01010100000');
-insert into TN_ROLE_MENU(ROLE_ID, MENU_ID)values('ROLE_ADMIN', '01010200000');
-insert into TN_ROLE_MENU(ROLE_ID, MENU_ID)values('ROLE_ADMIN', '01010101000');
-insert into TN_ROLE_MENU(ROLE_ID, MENU_ID)values('ROLE_ADMIN', '01010102000');
-insert into TN_ROLE_MENU(ROLE_ID, MENU_ID)values('ROLE_ADMIN', '02000000000');
-insert into TN_ROLE_MENU(ROLE_ID, MENU_ID)values('ROLE_ADMIN', '03000000000');
-insert into TN_ROLE_MENU(ROLE_ID, MENU_ID)values('ROLE_ADMIN', '04000000000');
-insert into TN_ROLE_MENU(ROLE_ID, MENU_ID)values('ROLE_ADMIN', '05000000000');
 insert into TN_ROLE_MENU(ROLE_ID, MENU_ID)values('ROLE_ADMIN', '99000000000');
-insert into TN_ROLE_MENU(ROLE_ID, MENU_ID)values('ROLE_USER', '01000000000');

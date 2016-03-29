@@ -71,4 +71,3 @@ create table TN_ROLE_MENU (
 	primary key(ROLE_ID, MENU_ID)
 );
 
-
