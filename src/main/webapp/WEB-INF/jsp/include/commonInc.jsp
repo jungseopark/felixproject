@@ -8,7 +8,7 @@
 <!--[if lt IE 9]><script src="<c:url value='/scripts/js/html5shiv/html5shiv.min.js'/>"></script><![endif]-->
 
 <!-- css -->
-<link rel="stylesheet" type="text/css" href="<c:url value='/scripts/css/common.css'/>">
+<link rel="stylesheet" type="text/css" href="<c:url value='/scripts/css/common.css?v=001'/>">
 
 <!-- javascripts -->
 <script src="<c:url value='/scripts/js/jquery/jquery-1.12.1.min.js'/>"></script>

@@ -3,16 +3,6 @@
 
 <mapper namespace="name.felix.commons.auth.service.impl.MenuMapper">
 
-	<!-- 
-	<resultMap id="TopMenu" type="MenuVO">
-		<result property="menuId" column="MENU_ID" />
-		<result property="upperMenuId" column="UPPER_MENU_ID" />
-		<result property="programId" column="PROGRAM_ID" />
-		<result property="programUrl" column="PROGRAM_URL" />
-		<result property="menuName" column="MENU_NAME" />
-	</resultMap>
-	 -->
-	 
 	 <resultMap id="TopMenu" type="MenuVO">
 	 	<result property="menuId" column="MENU_ID"/>
 	 	<association property="menuInfo"  javaType="Menu">
@@ -20,6 +10,7 @@
 	 		<result property="upperMenuId" column="UPPER_MENU_ID" />
 	 		<result property="programId" column="PROGRAM_ID" />
 	 		<result property="menuName" column="MENU_NAME" />
+	 		<result property="menuLevel" column="MENU_LEVEL" />
 	 	</association>
 	 	<association property="programInfo" javaType="Program">
 	 		<result property="programId" column="PROGRAM_ID" />
@@ -33,7 +24,8 @@
 			        e.UPPER_MENU_ID, 
 			        e.PROGRAM_ID, 
 			        d.PROGRAM_URL, 
-			        e.MENU_NAME
+			        e.MENU_NAME,
+			        e.MENU_LEVEL
              FROM   TN_USER a,
                     TN_USER_ROLE b,
                     TN_ROLE_MENU c,
@@ -43,10 +35,14 @@
               AND   b.ROLE_ID = c.ROLE_ID    
               AND   c.MENU_ID = e.MENU_ID
               AND   e.PROGRAM_ID = d.PROGRAM_ID
-              AND   e.MENU_LEVEL < 3
-              AND   a.USER_ID = #{searchUserId}
-         ORDER BY   e.MENU_ORDER
-		]]>
+        ]]>
+        <if test="searchUpperMenuId != null">
+        	<![CDATA[ AND   e.UPPER_MENU_ID = #{searchUpperMenuId} ]]>
+        </if>
+        <if test="searchUserId != null">
+        	<![CDATA[ AND   a.USER_ID = #{searchUserId} ]]>
+        </if>
+        <![CDATA[ ORDER BY   e.MENU_LEVEL, e.MENU_ORDER ]]>
 	</select>
 	
 </mapper>

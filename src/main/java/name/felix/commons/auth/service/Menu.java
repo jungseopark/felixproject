@@ -16,6 +16,8 @@ public class Menu implements Serializable {
 
 	private String upperMenuId;
 
+	private String menuLevel;
+
 	private String menuOrder;
 
 	private String programId;
@@ -72,6 +74,14 @@ public class Menu implements Serializable {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public String getMenuLevel() {
+		return menuLevel;
+	}
+
+	public void setMenuLevel(String menuLevel) {
+		this.menuLevel = menuLevel;
 	}
 
 }

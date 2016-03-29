@@ -57,6 +57,7 @@ public class LogInOutController extends FelixAbstractController {
 		// 세션에 탑메뉴 리스트 입력
 		MenuVO menuVO = new MenuVO();
 		menuVO.setSearchUserId(resultVO.getUserId());
+		menuVO.setSearchUpperMenuId("0");
 		sessionVO.setTopMenuList(menuService.selectTopMenuListByUser(menuVO));
 		
 		logger.debug("## menuVO size : {}", sessionVO.getTopMenuList().size());

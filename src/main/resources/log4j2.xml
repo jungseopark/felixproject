@@ -67,14 +67,17 @@ Jdbc.audit, jdbc.resultset, jdbc.connection은 방대한 로그를 남기기 때
 		<Logger name="jdbc.resultsettable" level="INFO" additivity="false">
 			<AppenderRef ref="consoleAppender" />
 		</Logger>
-		<Logger name="kr.pe.felixproject" level="DEBUG" additivity="false">
+		<Logger name="name.felix" level="DEBUG" additivity="false">
 			<AppenderRef ref="consoleAppender" />
 		</Logger>
-		<Logger name="org.springframework" level="INFO" additivity="false">
+		<Logger name="name.felix.commons.log" level="OFF" additivity="false">
+			<AppenderRef ref="consoleAppender" />
+		</Logger>
+		<Logger name="org.springframework" level="OFF" additivity="false">
 			<AppenderRef ref="consoleAppender" />
 		</Logger>
 
-		<Root level="TRACE">
+		<Root level="ERROR">
 			<AppenderRef ref="consoleAppender" />
 		</Root>
 	</Loggers>

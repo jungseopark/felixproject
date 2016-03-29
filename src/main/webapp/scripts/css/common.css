@@ -13,6 +13,9 @@ a:hover {
 	text-decoration: underline;
 }
 
+
+li {list-style-type:none;}
+
 body {
 	background-color: #d8d8d8;
 	font-family: "Trebuchet MS", "돋움", Dotum, Arial;
@@ -65,3 +68,4 @@ footer {
 	text-align: center;
 }
 
+.topMenuLi {float:left;}

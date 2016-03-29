@@ -12,10 +12,12 @@ public class MenuVO implements Serializable {
 
 	private String searchUserId;
 
+	private String searchUpperMenuId;
+
 	private String menuId;
 
 	private Menu menuInfo;
-	
+
 	private Program programInfo;
 
 	public String toString() {
@@ -52,6 +54,14 @@ public class MenuVO implements Serializable {
 
 	public void setProgramInfo(Program programInfo) {
 		this.programInfo = programInfo;
+	}
+
+	public String getSearchUpperMenuId() {
+		return searchUpperMenuId;
+	}
+
+	public void setSearchUpperMenuId(String searchUpperMenuId) {
+		this.searchUpperMenuId = searchUpperMenuId;
 	}
 
 }
