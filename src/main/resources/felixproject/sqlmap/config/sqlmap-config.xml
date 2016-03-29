@@ -7,6 +7,7 @@
 		<package name="name.felix.commons.log.service"/>
 		<package name="name.felix.commons.loginout.service"/>
 		<package name="name.felix.commons.auth.service"/>
+		<package name="name.felix.commons.code.service"/>
 	</typeAliases>
 	
 	<plugins>
