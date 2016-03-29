@@ -13,8 +13,9 @@ a:hover {
 	text-decoration: underline;
 }
 
-
-li {list-style-type:none;}
+li {
+	list-style-type: none;
+}
 
 body {
 	background-color: #d8d8d8;
@@ -68,4 +69,18 @@ footer {
 	text-align: center;
 }
 
-.topMenuLi {float:left;}
+#topMenuDiv {
+	margin-left: 150px;
+}
+
+#topMenuDiv a {
+	padding: 0px 10px 0px 10px;
+}
+
+.topMenuLi {
+	float: left;
+}
+
+.secondMenuUl {
+	position: absolute;
+}
