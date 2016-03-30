@@ -71,3 +71,11 @@ create table TN_ROLE_MENU (
 	primary key(ROLE_ID, MENU_ID)
 );
 
+create table TC_NATION (
+	NATION_CODE varchar(3) not null,
+	NATION_NAME_KOREA varchar(255) not null,
+	NATION_NAME_ENGLISH varchar(255),
+	CONTINENT_CODE varchar(20) not null,
+	primary key(NATION_CODE)
+);
+
