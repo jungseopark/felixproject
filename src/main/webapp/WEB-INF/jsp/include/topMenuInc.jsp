@@ -29,6 +29,7 @@ function getSecondMenu(upperMenuId) {
 				$(ulAppendId).append(liAppendContext);
 			});
 		}
+
 	});
 }
 
