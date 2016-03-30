@@ -14,6 +14,11 @@ function getSecondMenu(upperMenuId) {
 		data : {searchUpperMenuId : upperMenuId},
 		success : function(data) {
 			$.each(data.result, function(index, item){
+				// 2단메뉴 없이 3단 메뉴만 있는 경우 3단 메뉴로 이동
+				if (item.menuInfo.menuLevel == 3) {
+					getThirdMenu(item.menuInfo.upperMenuId);
+					return false;
+				}
 				// 2단메뉴 위치지정
 				var ulAppendId = "#" + item.menuInfo.upperMenuId;
 				// 2단메뉴 내용생성
@@ -41,10 +46,20 @@ function getThirdMenu(menuId) {
 	<ul id="topMenuUl">
 		<c:forEach var="topMenu" items="${sessionVO.topMenuList}" varStatus="status">
 			<li class="topMenuLi">
-				<a href="javascript:getSecondMenu(<c:out value='${topMenu.menuInfo.menuId}'/>);">
-					<c:out value='${topMenu.menuInfo.menuName}'/>
-				</a>
-				<ul id="<c:out value='${topMenu.menuInfo.menuId}'/>" class="secondMenuUl"></ul>
+				<c:choose>
+   					<c:when test="${topMenu.menuInfo.programId == 'dir'}">
+   						<a href="javascript:getSecondMenu(<c:out value='${topMenu.menuInfo.menuId}'/>);">
+							<c:out value='${topMenu.menuInfo.menuName}'/>
+						</a>
+						<ul id="<c:out value='${topMenu.menuInfo.menuId}'/>" class="secondMenuUl"></ul>
+   					</c:when>
+   					<c:otherwise>
+   						<!-- 1단메뉴에 바로 사이트 링크가 있는 경우 -->
+   						<a href="${topMenu.programInfo.programUrl}" target="_blank">
+							<c:out value='${topMenu.menuInfo.menuName}'/>
+						</a>
+   					</c:otherwise>
+				</c:choose>
 			</li>
 		</c:forEach>
 	</ul>
